@@ -14,3 +14,6 @@ val = sr.values
 print(idx)
 print('\n')
 print(val)
+
+# col = sr.columns
+# print(col) # AttributeError: 'Series' object has no attribute 'columns'
