@@ -20,3 +20,15 @@ print('\n')
 new_index = ['r0', 'r1', 'r2', 'r3', 'r4']
 ndf2 = df.reindex(new_index, fill_value=0)
 print(ndf2)
+
+ndf3 = df[:]
+print(ndf3.index)
+ndf3.index = ['rr0', 'rr1', 'rr2']
+print(ndf3.index)
+print(ndf3)
+# ValueError: Length mismatch: Expected axis has 3 elements, new values have 5 elements
+# ndf3.index = ['rr0', 'rr1', 'rr2', 'rr3', 'rr4']
+
+new_index2 = ['r0', 'rr1', 'r2']
+ndf4 = df.reindex(new_index2)
+print(ndf4)

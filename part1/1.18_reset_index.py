@@ -13,3 +13,22 @@ print('\n')
 # 행 인덱스를 정수형으로 초기화 
 ndf = df.reset_index()
 print(ndf)
+
+new_idx = ['rr0', 'rr1', 'rr2']
+# TypeError: reindex() got an unexpected keyword argument "inplace"
+# ndf.reindex(new_idx, inplace = True)
+ndf = ndf.reindex(new_idx)
+print(ndf)
+
+# 행 인덱스를 정수형으로 초기화 
+ndf2 = df.reset_index()
+print(ndf2)
+ndf2.index = new_idx 
+print(ndf2)
+ndf3 = ndf2.reset_index()
+print(ndf3)
+ndf3.index = new_idx 
+print(ndf3)
+# ValueError: cannot insert level_0, already exists
+# ndf4 = ndf3.reset_index()
+# print(ndf4)
